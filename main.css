@@ -27,8 +27,8 @@
   --br-m: 0.375em;
   --br-l: 0.5em;
   --section-spacing: 4rem;
-
 }
+
 *, *::after, *::before {
   box-sizing: border-box;
   padding: 0;
