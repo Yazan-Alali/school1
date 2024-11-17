@@ -48,3 +48,44 @@ function disableDarkMode() {
   darkmodeSwitch.checked = false
   document.documentElement.classList.remove('dark')
 }
+
+ 
+
+  const accordionInit = () => {
+    const accordions =document.querySelectorAll(".accordion-item")
+
+    accordions.forEach(accordion => {
+      const titlebar = accordion.querySelector(".item-titlebar")
+      const content = accordion.querySelector(".item-content")
+      const icon = accordion.querySelector(".item-icon")
+
+      titlebar.addEventListener("click", () => {
+        const isOpen = accordion.classList.contains("active")
+
+        accordions.forEach(item =>{
+          item.classList.remove("active")
+          content.classList.remove("active")
+          icon.classList.remove("fa-chevron-up")
+          icon.classList.add("fa-chevron-down")
+        });
+        if (!isOpen){
+          accordion.classList.add("active")
+          content.classList.add("active")
+          icon.classList.add("fa-chevron-up")
+          icon.classList.remove("fa-chevron-down")
+        } else{
+          accordion.classList.remove("active")
+          content.classList.remove("active")
+          icon.classList.remove("fa-chevron-up")
+          icon.classList.add("fa-chevron-down")
+
+        }
+      })
+    })
+  }
+
+  accordionInit();
+
+
+
+ 
